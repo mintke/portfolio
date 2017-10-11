@@ -153,7 +153,7 @@
 					<div class="col-md-5 col-sm-12 col-xs-12 col-md-offset-1 promo-info"style="padding-top: 0px;">
 						<h1><span style="color: #55a746; ">Fresh</span><br><strong style="font-size: 150%;"> Healthy servings!</strong></h1>
 						<p class="col-sm-6"><strong style="color:green;">Quick Delivery</strong><br><strong style="font-weight: bold; color:#2b2828">Keep a tab on your daily expenses and also a consolidated view of expenditure over the last week or month.</strong></p>
-						<p class="col-sm-6"><strong	style="color:green;">Always Fresh</strong><br><strong style="font-weight: bold; color:#2b2828">We have been providing safe, nutritious, and high quality Milk products to the customers.</strong></p>
+						<p class="col-sm-6"><strong	style="color:green;">Always Fresh</strong><br><strong style="font-weight: bold; color:#2b2828">We have been providing safe, nutritious, and high quality products to the customers.</strong></p>
 										
 						<p style="font-weight: bold; color:#2b2828">Without spending try the goodness of our product..,<a class="page-scroll" href="#about"> Learn More..</a></P>
 						<button type="button" class="btn-u btn-u-lg btn-u-green btn-u-upper rounded-2x" data-toggle="modal" data-target="#sample" data-whatever="@mdo">Get Free Sample</button>
@@ -211,10 +211,10 @@
 											<input type="text" class="form-control" placeholder="Mobile Number" id="Mobile">
 										</div>
 										<div class="form-group">
-											<input type="textarea" class="form-control" placeholder="Address Lane 1" id="address1">
+											<input type="textarea" class="form-control" placeholder="Address line 1" id="address1">
 										</div>
 										<div class="form-group">
-											<input type="textarea" class="form-control" placeholder="Address Lane 2" id="address2">
+											<input type="textarea" class="form-control" placeholder="Address line 2" id="address2">
 										</div>
 										
 										<div class="form-group">
@@ -876,10 +876,10 @@
 							<input type="text" class="form-control" placeholder="Mobile Number" id="Mobile">
 						</div>
 						<div class="form-group">
-							<input type="textarea" class="form-control" placeholder="Address Lane 1" id="address1">
+							<input type="textarea" class="form-control" placeholder="Address line 1" id="address1">
 						</div>
 						<div class="form-group">
-							<input type="textarea" class="form-control" placeholder="Address Lane 2" id="address2">
+							<input type="textarea" class="form-control" placeholder="Address line 2" id="address2">
 						</div>
 						<div class="form-group">
 			<!--			 <p>Following Package Are For Monthly Based:</p>-->
@@ -1107,7 +1107,7 @@
 					</button>
 				</div>
 					<div class="modal-body">
-						<form>
+						<form name="freesample">
 							<div class="form-group">
 								
 								<input type="text" class="form-control" data-validate-as="Required" placeholder="Name" id="recipient-name">
@@ -1120,39 +1120,39 @@
 								<input type="text" class="form-control" placeholder="Mobile Number" id="Mobile">
 							</div>
 							<div class="form-group">
-								<input type="textarea" class="form-control" placeholder="Address Lane 1" id="address1">
+								<input type="textarea" class="form-control" placeholder="Address line 1" id="address1">
 							</div>
 							<div class="form-group">
-								<input type="textarea" class="form-control" placeholder="Address Lane 2" id="address2">
+								<input type="textarea" class="form-control" placeholder="Address line 2" id="address2">
 							</div>
 							<p>Try Out:</p>
 							 <div class="checkbox">
 							  <label>
-								<input type="checkbox" value="">
+								<input type="checkbox" name="samplewheat" onClick="return KeepCount()" value="">
 								Wheat Bread
 							  </label>
 							</div>
 							<div class="checkbox">
 							  <label>
-								<input type="checkbox" value="" >
+								<input type="checkbox" name="samplemilkbread" onClick="return KeepCount()" value="" >
 								Milk bread
 							  </label>
 							</div>
 							<div class="checkbox">
 							  <label>
-								<input type="checkbox" value="">
+								<input type="checkbox" name="samplemilk" onClick="return KeepCount()" value="">
 								Fresh Milk
 							  </label>
 							</div>
 							<div class="checkbox">
 							  <label>
-								<input type="checkbox" value="" >
+								<input type="checkbox" name="samplecurd" onClick="return KeepCount()" value="" >
 								Curd
 							  </label>
 							</div>
 							<div class="checkbox">
 							  <label>
-								<input type="checkbox" value="" >
+								<input type="checkbox" name="samplebatter" onClick="return KeepCount()" value="" >
 								Rice Batter
 							  </label>
 							</div>
@@ -1257,6 +1257,33 @@
     }, 500);
 });
 	 </script>
+	 <SCRIPT LANGUAGE="javascript">
+
+function KeepCount() {
+
+var NewCount = 0
+
+if (document.freesample.samplemilkbread.checked)
+{NewCount = NewCount + 1}
+
+if (document.freesample.samplewheat.checked)
+{NewCount = NewCount + 1}
+
+if (document.freesample.samplecurd.checked)
+{NewCount = NewCount + 1}
+
+if (document.freesample.samplemilk.checked)
+{NewCount = NewCount + 1}
+
+if (document.freesample.samplebatter.checked)
+{NewCount = NewCount + 1}
+if (NewCount == 3)
+{
+alert('Pick Just Two Please')
+document.freesample; return false;
+}
+} 
+</SCRIPT>
 	<!--[if lt IE 10]>
 	  <script src="../assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js"></script>
 	<![endif]-->
